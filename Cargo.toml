@@ -1,0 +1,29 @@
+[package]
+name = "idea-database"
+version = "0.1.0"
+edition = "2024"
+description = "ideabase common code"
+license = "Apache-2.0"
+
+[dependencies]
+log = {  version = "0.4" }
+lazy_static = { version = "1"}
+base64 = {  version = "0.22" }
+chrono = { version = "0.4", features=["serde"] }
+
+# hashmap
+fnv = { version = "1.0" }
+
+# json
+serde_json = { version = "1.0" }
+serde = { version = "1.0", features = ["derive"] }
+
+# database: MySQL, PostgreSQL, ...
+sqlx = { version = "0.8", features = ["chrono", "rust_decimal"] }
+[features]
+default = ["mysql"]
+mysql = ["sqlx/mysql"]
+postgres = ["sqlx/postgres"]
+
+[dev-dependencies]
+tokio-test = "0.4"
