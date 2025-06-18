@@ -21,7 +21,7 @@ serde = { version = "1.0", features = ["derive"] }
 # database: MySQL, PostgreSQL, ...
 sqlx = { version = "0.8", features = ["chrono", "rust_decimal"] }
 [features]
-default = ["mysql"]
+default = ["mysql", "postgres"]
 mysql = ["sqlx/mysql"]
 postgres = ["sqlx/postgres"]
 
